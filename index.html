@@ -1,152 +1,81 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<link rel="icon" href="https://icon666.com/r/_thumb/wqg/wqg9u2e64q9s_64.png" type="image/x-icon">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shiny Hair</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SocialBeli</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="header">
-<h1 class="heading-primary">Shiny Hair</h1>
-<nav>
-  <ul class="nav-list">
-   <li><a href="#home">Главная</a></li>
-   <li><a href="#about">О нас</a></li>
-   <li><a href="#contact">Контакты</a></li>
-   <li><a href="#testimonials">Отзывы</a></li>
-  </ul>
-</nav>
-</header>
+  <div id="auth-container">
+    <h1>Добро пожаловать в SocialBeli</h1>
+    <div id="auth-forms">
+      <form id="login-form">
+        <h2>Вход</h2>
+        <input type="text" id="login-username" placeholder="Имя пользователя" required>
+        <input type="password" id="login-password" placeholder="Пароль" required>
+        <button type="button" onclick="login()">Войти</button>
+        <p>Нет аккаунта? <a href="#" onclick="toggleForms()">Зарегистрироваться</a></p>
+      </form>
 
-<section id="home">
-    <article>
-        <h2>Как правильно ухаживать за волосами?</h2>
-        <p>Уход за волосами — это не просто рутинная процедура, а целый ритуал, который требует внимания и заботы. Каждое прядь волос нуждается в индивидуальном подходе, и выбор средств для ухода должен основываться на типе волос и их состоянии. В современном мире, где волосы подвергаются воздействию различных факторов, таких как загрязнение воздуха, ультрафиолетовые лучи и частые термические укладки, важно поддерживать их здоровье и красоту.</p>
+      <form id="register-form" style="display: none;">
+        <h2>Регистрация</h2>
+        <input type="text" id="register-username" placeholder="Имя пользователя" required>
+        <input type="password" id="register-password" placeholder="Пароль" required>
+        <button type="button" onclick="register()">Зарегистрироваться</button>
+        <p>Уже есть аккаунт? <a href="#" onclick="toggleForms()">Войти</a></p>
+      </form>
+    </div>
+  </div>
 
-        <p>Вот несколько ключевых аспектов ухода за волосами:</p>
+  <div id="main-container" style="display: none;">
+    <header>
+      <h1>SocialBeli</h1>
+      <nav>
         <ul>
-            <li><strong>Тип волос:</strong> Определите, какой у вас тип волос — жирные, сухие, нормальные или комбинированные, и подберите подходящие средства. Каждый тип волос требует своего подхода, например, для жирных волос важны очищающие шампуни, тогда как для сухих — увлажняющие кондиционеры.</li>
-            <li><strong>Регулярное мытье:</strong> Регулярное мытье головы помогает поддерживать чистоту кожи, но не стоит забывать, что частое мытье может привести к пересушиванию. Оптимально мыть волосы через день или два, используя шампунь, подходящий вашему типу волос.</li>
-            <li><strong>Температура воды:</strong> Используйте теплую, а не горячую воду, чтобы избежать повреждения структуры. Горячая вода может лишать волосы естественного блеска, делая их тусклыми и ломкими.</li>
-            <li><strong>Дополнительные процедуры:</strong> Маски и масла помогут восстановить и укрепить волосы. Натуральные масла, такие как кокосовое или оливковое, богаты питательными веществами, которые питают и укрепляют корни волос.</li>
-            <li><strong>Правильное расчесывание:</strong> Используйте расчески с редкими зубьями и будьте осторожны с влажными волосами, так как они более уязвимы к повреждениям. Начинайте расчесывание с концов, постепенно продвигаясь к корням.</li>
+          <li><a href="#" onclick="showSection('feed')">Лента</a></li>
+          <li><a href="#" onclick="showSection('profile')">Профиль</a></li>
+          <li><a href="#" onclick="showSection('messages')">Сообщения</a></li>
+          <li><a href="#" onclick="showSection('notifications')">Уведомления</a></li>
+          <li><a href="#" onclick="logout()">Выход</a></li>
         </ul>
+      </nav>
+    </header>
 
-        <h3>Как правильно выбрать шампунь?</h3>
-        <p>Выбор шампуня зависит от многих факторов, включая тип волос и проблемы с кожей головы. Вот на что стоит обратить внимание при выборе:</p>
-        <ul>
-            <li><strong>Тип волос:</strong> Для жирных волос подойдут очищающие шампуни, а для сухих — увлажняющие. Если у вас комбинированные волосы, попробуйте использовать шампуни, которые балансируют жирность у корней и увлажняют концы.</li>
-            <li><strong>Проблемы с кожей головы:</strong> Если у вас есть такие проблемы, как перхоть, зуд или чувствительная кожа головы, выбирайте специализированные шампуни. Они помогут справиться с дискомфортом и улучшить состояние кожи.</li>
-            <li><strong>Состав:</strong> Избегайте шампуней с агрессивными сульфатами и парабенами. Ищите продукты с натуральными ингредиентами, которые мягко ухаживают за волосами и кожей головы.</li>
-            <li><strong>Частота использования:</strong> Если вы моете голову ежедневно, выбирайте мягкие шампуни для частого использования. Они обеспечивают деликатное очищение без пересушивания.</li>
-        </ul>
+    <main>
+      <section id="feed">
+        <h2>Лента</h2>
+        <div id="new-post">
+          <textarea placeholder="Что у вас нового?"></textarea>
+          <button onclick="addPost()">Опубликовать</button>
+        </div>
+        <div id="posts">
+          <!-- Здесь будут загружаться посты -->
+        </div>
+      </section>
 
-        <p>Следуя этим рекомендациям, вы сможете выбрать правильный шампунь и ухаживать за своими волосами таким образом, чтобы они оставались здоровыми и красивыми. Помните, что красивые волосы — это результат регулярного и тщательного ухода.</p>
+      <section id="profile" style="display: none;">
+        <h2>Профиль</h2>
+        <div id="user-profile">
+          <p><strong>Имя:</strong> Иван Иванов</p>
+          <p><strong>О себе:</strong> Веб-разработчик, увлеченный созданием красивого и эффективного кода. Люблю технологии и кофе.</p>
+          <p><strong>Местоположение:</strong> Москва, Россия</p>
+          <button onclick="editProfile()">Редактировать профиль</button>
+        </div>
+      </section>
 
-        <h3>Питание и образ жизни</h3>
-        <p>Не забывайте, что состояние волос напрямую связано с вашим образом жизни и питанием. Здоровое питание, богатое витаминами и минералами, положительно влияет на здоровье волос. Регулярное употребление свежих овощей, фруктов, рыбы и орехов обеспечивает организм необходимыми веществами для поддержания волос в отличном состоянии.</p>
-       
-        <h3>Избегайте стресса и переутомления</h3>
-        <p>Стресс и переутомление могут вызвать выпадение волос и ухудшение их состояния. Старайтесь уделять время отдыху и расслаблению, занимайтесь спортом или медитацией, чтобы поддерживать баланс в жизни.</p>
-       
-        <h3>Заключение</h3>
-        <p>Уход за волосами — это не только использование правильных продуктов, но и комплексный подход, включающий здоровое питание и образ жизни. Заботьтесь о своих волосах с любовью, и они ответят вам сиянием и здоровьем!</p>
-    </article>
-</section>
+      <section id="messages" style="display: none;">
+        <h2>Сообщения</h2>
+        <p>У вас нет новых сообщений.</p>
+      </section>
 
-<section class="products">
-  <h2>Рекомендуемые продукты для ухода за волосами</h2>
- 
-  <div class="product">
-    <img src="https://static3.nordic.pictures/29078382-thickbox_default/shampoo-loreal-inforcer-for-women-500-ml.jpg" alt="Шампунь">
-    <h3>Шампунь для глубокого очищения</h3>
-    <p><strong>Описание:</strong> Этот шампунь предназначен для тщательной очистки волос и кожи головы от загрязнений и излишков жира.</p>
-    <button class="btn">Купить сейчас</button>
-  </div>
- 
-  <div class="product">
-    <img src="https://m.media-amazon.com/images/I/713QzZoR8aL._AC_SS450_.jpg" alt="Кондиционер">
-    <h3>Кондиционер для увлажнения</h3>
-    <p><strong>Описание:</strong> Кондиционер, который облегчает расчесывание и придает волосам мягкость.</p>
-    <button class="btn">Купить сейчас</button>
-  </div>
- 
-  <div class="product">
-    <img src="https://i.pinimg.com/736x/9c/49/58/9c4958723e8553eb32478e034ef6f752.jpg" alt="Бальзам">
-    <h3>Бальзам для восстановления</h3>
-    <p><strong>Описание:</strong> Питательный бальзам, который восстанавливает структуру волос, придавая им живой блеск.</p>
-    <button class="btn">Купить сейчас</button>
+      <section id="notifications" style="display: none;">
+        <h2>Уведомления</h2>
+        <p>У вас нет новых уведомлений.</p>
+      </section>
+    </main>
   </div>
 
-  <div class="product">
-    <img src="https://avatars.mds.yandex.net/i?id=02f8be461b0697cb610ef52068c6abc13c7962d1-9853586-images-thumbs&n=13" alt="Маска">
-    <h3>Маска для волос</h3>
-    <p><strong>Описание:</strong> Средство ухода, которое питает, восстанавливает и укрепляет волосы, придавая им здоровый блеск и силу.</p>
-    <button class="btn">Купить сейчас</button>
-  </div>
- 
-  <div class="product">
-    <img src="https://kimmi-shop.ru/upload/resize_cache/webp/iblock/f02/f02f2fdbc8e7fc8852e9129f08449d1a.webp" alt="Шампунь">
-    <h3>Шампунь для объема</h3>
-    <p><strong>Описание:</strong> Этот шампунь придает волосам объем и пышность благодаря уникальной формуле с натуральными компонентами.</p>
-    <button class="btn">Купить сейчас</button>
-  </div>
- 
-  <div class="product">
-    <img src="https://avatars.mds.yandex.net/i?id=eaa306333fbcc3b08f185db3264057f3_l-8819226-images-thumbs&n=13" alt="Шампунь">
-    <h3>Шампунь для блеска</h3>
-    <p><strong>Описание:</strong> Специально разработан для придания волосам блеска и шелковистости, обеспечивая их питание и защиту.</p>
-    <button class="btn">Купить сейчас</button>
-  </div>
-
-</section>
-
-<section id="testimonials">
-<section class="testimonials">
-  <h2>Отзывы наших клиентов</h2>
-  <div class="testimonial">
-    <img src="https://sun165-1.userapi.com/s/v1/ig2/PL03PfS5QUHVSGstDku9G4x9QcdFRy5wooAD_hu1gBpRmOAV9BZYl-gLYqX8d2IR-XEESx9ljAdiYGb-pWXBnxMW.jpg?quality=95&crop=0,185,960,960&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720&ava=1&u=C5JBtznDToGUUkHaAd_GZSt8KaIBLKl1p8_vzeZFD7w&cs=200x200" 
-    <p><strong>Анастасися:</strong> Очень помогли ваши советы! Волосы стали мягкими и шелковистыми.</p>
-  </div>
-  <div class="testimonial">
-    <img src="https://steamuserimages-a.akamaihd.net/ugc/1761438457126349721/7FE3B372E1A9BFEE3F1CDD20A06D6070F2C91B50/?imw=512&amp;&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false"
-    <p><strong>Владимир:</strong> Классные шампуни, заметил улучшение уже через неделю!</p>
-  </div>
-  <div class="testimonial">
-    <img src="https://avatars.mds.yandex.net/i?id=1b44e3a577a7aa08b22c5de0165383ef5fc0df95-10025673-images-thumbs&n=13"
-    <p><strong>Екатерина:</strong> Рекомендую данные продукты! Изменение на лицо!</p>
-  </div>
-</section>
-
-<footer class="footer">
-<section id="about">
-  <h2>О нас</h2>
-  <p>Мы — команда специалистов, которые стремятся помочь вам заботиться о своих волосах. Наши продукты разработаны с учетом всех типов и потребностей волос, чтобы каждый мог найти идеальное решение для себя.</p>
-</section>
-
-<section id="contact">
-  <h2>Контакты</h2>
-  <p>Свяжитесь с нами: <a href="mailto:shiny@hair.ru">shiny@hair.ru</a></p>
-</section>
-
-<div class="social-icons">
-  <a href="https://vk.com" target="_blank">
-  <img src="https://img.icons8.com/?size=100&id=114452&format=png&color=000000" alt="VK">
-  </a>
-  <a href="https://rossgram.ru/" target="_blank">
-  <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="Instagram">
-  </a>
-  <a href="https://telegram.org" target="_blank">
-  <img src="https://img.icons8.com/?size=100&id=63306&format=png&color=000000" alt="Telegram">
-  </a>
-  <a href="https://rusbuk.ru/" target="_blank">
-  <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="Facebook">
-  </a>
-</div>
-<p>Instagram и Facebook запрещены на территории РФ</p>
-<p>&copy; 2024 Shiny Hair. Все права защищены.</p>
-</footer>
+  <script src="app.js"></script>
 </body>
 </html>
